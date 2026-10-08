@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For the Mind</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index-style.css">
+</head>
+<body>
+
+  <div class="center-content">
+    <h1>ARE YOU THE WINNER?</h1>
+    <h2>Fingers crossed!</h2>
+    <p>Enter the password</p>
+    
+    <input type="text" id="password" placeholder="Let's see what you've got...">
+    <br>
+    <button onclick="verify()">SUBMIT</button>
+    
+    <div id="error-msg">Kwani rada bruuuh! Uskii mumebant.</div>
+  </div>
+
+  <script>
+    function verify() {
+      const input = document.getElementById('password').value.toUpperCase().replace(/\s/g, '');
+      const errorMsg = document.getElementById('error-msg');
+
+      if (input === 'EMERGENCYRESPONSEWIN') {
+        window.location.href = 'winner.html';
+      } else {
+        errorMsg.style.display = 'block';
+        document.getElementById('password').value = '';
+      }
+    }
+  </script>
+
+</body>
+</html>
